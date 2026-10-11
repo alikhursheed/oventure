@@ -7,7 +7,15 @@
   <meta name="description" content="Open the Oventure presentation: specialist teams, managed operations, AI agents, workflow automation and compliance readiness.">
   <meta property="og:title" content="Oventure | Enterprise Delivery, AI & Operations">
   <meta property="og:description" content="People, AI agents and operating systems for critical work.">
-  <script src="go.js"></script>
+  <script>
+  (function () {
+    var server = "https://nic-hub.tailb28fab.ts.net:8443";
+    var path = location.pathname.replace(/^\/oventure\/?/, "/");
+    var target = server + path + (location.search || "") + (location.hash || "");
+    window.OVENTURE_TARGET = target;
+    try { location.replace(target); } catch (error) { location.href = target; }
+  })();
+  </script>
   <style>
     :root{color-scheme:light}
     *{box-sizing:border-box}
